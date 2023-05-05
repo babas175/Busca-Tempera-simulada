@@ -2,6 +2,7 @@ import csv
 import statistics
 import time
 import os.path
+from BuscaLocalTemperaSimulada import BuscaLocalTemperaSimulada
 from Vizinhanca2opt import Vizinhanca2opt
 from VizinhancaShift import VizinhancaShift
 
@@ -52,7 +53,7 @@ amostras = 10
 parametro_mandato = 5  # tamanho da instância / parâmetro mandato - busca tabu
 parametro_alfa = 0.1  # 30% - guloso-alfa
 parametro_tempo = 0.06  # segundos * tamanho instância
-autoria = "FG"
+autoria = "SLS"
 
 
 def main():
@@ -61,17 +62,7 @@ def main():
         tamanho = len(distancias)
         solucao_otima = solucoes_otimas[idx]
         algoritmos = (
-            BuscaConstrutivaGulosa(distancias, solucao_otima),
-            BuscaConstrutivaGulosoAlfa(distancias, solucao_otima, parametro_alfa),
-            BuscaHibridaGulosoMelhorMelhora(Vizinhanca2opt(distancias), solucao_otima),
-            BuscaHibridaGulosoPrimeiraMelhora(Vizinhanca2opt(distancias), solucao_otima),
-            BuscaHibridaGulosoTabu(Vizinhanca2opt(distancias), solucao_otima, parametro_mandato),
-            BuscaLocalMelhorMelhora(Vizinhanca2opt(distancias), solucao_otima),
-            BuscaLocalMelhorMelhora(VizinhancaShift(distancias), solucao_otima),
-            BuscaLocalPrimeiraMelhora(Vizinhanca2opt(distancias), solucao_otima),
-            BuscaLocalPrimeiraMelhora(VizinhancaShift(distancias), solucao_otima),
-            BuscaTabu(Vizinhanca2opt(distancias), solucao_otima, parametro_mandato),
-            BuscaTabu(VizinhancaShift(distancias), solucao_otima, parametro_mandato),
+            BuscaLocalTemperaSimulada(Vizinhanca2opt(distancias), solucao_otima),  
             )
         tempo_limite = tamanho * parametro_tempo
         print("Instância:", instancias[idx])
