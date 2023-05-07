@@ -1,9 +1,10 @@
 class Solucao:
-    def __init__(self, qualidade: int, ciclo: list, i_movimento: int = 0, j_movimento: int = 0):
+    def __init__(self, qualidade: int, ciclo: list, i_movimento: int = 0, j_movimento: int = 0, custo: int = 0):
         self.qualidade = qualidade
         self.ciclo = ciclo
         self.i_movimento = i_movimento
         self.j_movimento = j_movimento
+        self.custo = custo
         self.tempo = 0
         self.iteracao = 0
 

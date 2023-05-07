@@ -5,6 +5,9 @@ import os.path
 from BuscaLocalTemperaSimulada import BuscaLocalTemperaSimulada
 from Vizinhanca2opt import Vizinhanca2opt
 from VizinhancaShift import VizinhancaShift
+from BuscaConstrutivaGulosa import BuscaConstrutivaGulosa
+from Vizinhanca import Vizinhanca
+from BuscaHibridaGulosoTemperaSimulada import BuscaHibridaGulosoTemperaSimulada
 
 
 def ler_arquivo(instancia: str) -> tuple:
@@ -54,6 +57,8 @@ parametro_mandato = 5  # tamanho da instância / parâmetro mandato - busca tabu
 parametro_alfa = 0.1  # 30% - guloso-alfa
 parametro_tempo = 0.06  # segundos * tamanho instância
 autoria = "SLS"
+temperatura_inicial = 1
+fator_resfriamento = 0.95
 
 
 def main():
@@ -62,7 +67,9 @@ def main():
         tamanho = len(distancias)
         solucao_otima = solucoes_otimas[idx]
         algoritmos = (
-            BuscaLocalTemperaSimulada(Vizinhanca2opt(distancias), solucao_otima),  
+            BuscaConstrutivaGulosa(distancias, solucao_otima), 
+            BuscaLocalTemperaSimulada(Vizinhanca2opt(distancias), solucao_otima, parametro_mandato),
+            #BuscaLocalTemperaSimulada(VizinhancaShift(distancias), solucao_otima, parametro_mandato),
             )
         tempo_limite = tamanho * parametro_tempo
         print("Instância:", instancias[idx])

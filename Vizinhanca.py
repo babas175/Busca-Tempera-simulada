@@ -23,9 +23,8 @@ class Vizinhanca:
         pass
 
     @abstractmethod
-    def primeiro_vizinho_melhor(self, solucao: Solucao, tabu: set) -> Solucao:
+    def primeiro_vizinho_melhor(self, solucao: Solucao, i_inicial: int, j_inicial: int) -> Solucao:
         pass
-
-    @abstractmethod
-    def proximo_vizinho(self, solucao: Solucao, i_inicial: int, j_inicial: int) -> Solucao:
-        pass
+    
+    
+    
