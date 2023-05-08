@@ -1,0 +1,16 @@
+instancia,autoria,algoritmo,q-medio,q-desvio,t-medio
+Western Sahara,SLS,BCG,32814,0.0,0
+Western Sahara,SLS,CG+BT2opt,32814,0.0,0
+Western Sahara,SLS,BTS2opt,119154,0.0,0
+Djibouti,SLS,BCG,8230,0.0,0
+Djibouti,SLS,CG+BT2opt,8230,0.0,0
+Djibouti,SLS,BTS2opt,26087,0.0,0
+Qatar,SLS,BCG,11282,0.0,1
+Qatar,SLS,CG+BT2opt,11282,0.0,1
+Qatar,SLS,BTS2opt,95895,0.0,0
+Uruguay,SLS,BCG,99124,0.0,44
+Uruguay,SLS,CG+BT2opt,99124,0.0,44
+Uruguay,SLS,BTS2opt,1649075,0.0,0
+Zimbabwe,SLS,BCG,112615,0.0,56
+Zimbabwe,SLS,CG+BT2opt,112615,0.0,56
+Zimbabwe,SLS,BTS2opt,2354240,0.0,0
